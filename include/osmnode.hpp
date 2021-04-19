@@ -18,6 +18,9 @@ namespace osmp
 
 		friend Node CreateNode(const tinyxml2::XMLElement* element, Object* parent);
 
+		double GetLat() const { return lat; }
+		double GetLon() const { return lon; }
+
 	protected:
 		INode(const tinyxml2::XMLElement* xml, Object* parent);
 
