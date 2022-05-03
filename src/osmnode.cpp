@@ -1,4 +1,4 @@
-#include <osmnode.hpp>
+#include "osmnode.hpp"
 
 #include <tinyxml2.h>
 

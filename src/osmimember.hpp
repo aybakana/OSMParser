@@ -4,8 +4,8 @@
 #include <vector>
 #include <map>
 
-#include <util.hpp>
-#include <osmtag.hpp>
+#include "util.hpp"
+#include "osmtag.hpp"
 
 namespace osmp
 {
@@ -22,12 +22,12 @@ namespace osmp
 		IMember(const IMember& other) = delete;
 		virtual ~IMember() {}
 
-		[[nodiscard]] IMember::Type GetType() const;
+		IMember::Type GetType() const;
 
-		[[nodiscard]] const TagList& GetTags() const;
-		[[nodiscard]] size_t GetTagsSize() const;
-		[[nodiscard]] const Tag& GetTag(size_t index) const;
-		[[nodiscard]] std::string GetTag(const std::string& key) const;
+		const TagList& GetTags() const;
+		size_t GetTagsSize() const;
+		const Tag& GetTag(size_t index) const;
+		std::string GetTag(const std::string& key) const;
 
 	protected:
 		IMember(const tinyxml2::XMLElement* element, Object* parent, IMember::Type type);

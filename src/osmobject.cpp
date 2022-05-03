@@ -1,13 +1,13 @@
-#include <osmobject.hpp>
+#include "osmobject.hpp"
 
 #include <iostream>
 #include <vector>
 
 #include <tinyxml2.h>
 
-#include <osmnode.hpp>
-#include <osmway.hpp>
-#include <osmrelation.hpp>
+#include "osmnode.hpp"
+#include "osmway.hpp"
+#include "osmrelation.hpp"
 
 namespace xml = tinyxml2;
 

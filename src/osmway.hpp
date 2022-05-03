@@ -2,9 +2,9 @@
 #include <vector>
 #include <memory>
 
-#include <util.hpp>
-#include <osmtag.hpp>
-#include <osmimember.hpp>
+#include "util.hpp"
+#include "osmtag.hpp"
+#include "osmimember.hpp"
 
 namespace osmp
 {
@@ -19,9 +19,9 @@ namespace osmp
 
 		friend Way CreateWay(const tinyxml2::XMLElement* way_elem, Object* parent);
 
-		[[nodiscard]] const Nodes& GetNodes() const;
-		[[nodiscard]] size_t GetNodesSize() const;
-		[[nodiscard]] Node GetNode(size_t index) const;
+		const Nodes& GetNodes() const;
+		size_t GetNodesSize() const;
+		Node GetNode(size_t index) const;
 
 	protected:
 		IWay(const tinyxml2::XMLElement* way_elem, Object* parent);

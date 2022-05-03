@@ -1,10 +1,11 @@
-#include <osmway.hpp>
+#include "osmway.hpp"
 
 #include <string>
 
 #include <tinyxml2.h>
-#include <osmobject.hpp>
-#include <osmtag.hpp>
+
+#include "osmobject.hpp"
+#include "osmtag.hpp"
 
 namespace xml = tinyxml2;
 

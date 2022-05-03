@@ -2,9 +2,9 @@
 #include <vector>
 #include <memory>
 
-#include <util.hpp>
-#include <osmtag.hpp>
-#include <osmimember.hpp>
+#include "util.hpp"
+#include "osmtag.hpp"
+#include "osmimember.hpp"
 
 namespace osmp
 {

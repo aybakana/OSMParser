@@ -1,9 +1,9 @@
 #pragma once
 #include <vector>
 
-#include <util.hpp>
-#include <osmimember.hpp>
-#include <osmtag.hpp>
+#include "util.hpp"
+#include "osmimember.hpp"
+#include "osmtag.hpp"
 
 namespace osmp
 {

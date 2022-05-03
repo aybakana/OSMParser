@@ -1,6 +1,6 @@
-#include <osmimember.hpp>
+#include "osmimember.hpp"
 
-#include <osmobject.hpp>
+#include "osmobject.hpp"
 #include <tinyxml2.h>
 
 namespace xml = tinyxml2;
