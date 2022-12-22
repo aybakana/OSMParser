@@ -1,11 +1,6 @@
 #pragma once
 
-#include "util.h"
-#include "tag.h"
-#include "member.h"
 #include "object.h"
-#include "node.h"
-#include "way.h"
 
 #include <vector>
 //#include <memory> // no need for this

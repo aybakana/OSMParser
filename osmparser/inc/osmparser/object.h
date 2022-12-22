@@ -1,6 +1,5 @@
 #pragma once
 
-#include "util.h"
 #include "node.h"
 #include "way.h"
 #include "relation.h"
