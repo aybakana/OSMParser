@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version="0.6" generator="osmconvert 0.8.11" timestamp="2022-12-12T00:59:58Z">
+	<bounds minlat="40.953" minlon="28.669" maxlat="41.241" maxlon="29.319"/>
+	<node id="21107200" lat="41.0221239" lon="29.047999" version="1">
+		<tag k="highway" v="motorway_junction"/>
+		<tag k="name" v="Altunizade"/>
+		<tag k="ref" v="K12"/>
+	</node>
+	<relation id="14977224" version="1">
+		<member type="way" ref="825886252" role=""/>
+		<member type="way" ref="343899699" role=""/>
+		<member type="way" ref="944631519" role=""/>
+		<member type="way" ref="343899711" role=""/>
+		<member type="way" ref="343899695" role=""/>
+		<member type="way" ref="229991783" role=""/>
+		<member type="way" ref="944631530" role=""/>
+		<member type="way" ref="858326335" role=""/>
+		<member type="way" ref="466648664" role=""/>
+		<member type="way" ref="1063726642" role=""/>
+		<member type="way" ref="1063726641" role=""/>
+		<member type="way" ref="1063726640" role=""/>
+		<member type="way" ref="227743519" role=""/>
+		<member type="way" ref="78194657" role=""/>
+		<member type="way" ref="944669791" role=""/>
+		<member type="way" ref="1081242473" role=""/>
+		<member type="way" ref="944669762" role=""/>
+		<member type="way" ref="82295074" role=""/>
+		<member type="way" ref="875501174" role=""/>
+		<member type="way" ref="82295062" role=""/>
+		<member type="way" ref="1119868018" role=""/>
+		<member type="way" ref="229625221" role=""/>
+		<member type="way" ref="229625057" role=""/>
+		<member type="way" ref="228534224" role=""/>
+		<member type="way" ref="276924416" role=""/>
+		<member type="way" ref="315867759" role=""/>
+		<member type="way" ref="229731659" role=""/>
+		<member type="way" ref="1119868016" role=""/>
+		<member type="way" ref="83118296" role=""/>
+		<member type="way" ref="684705396" role=""/>
+		<member type="way" ref="215231180" role=""/>
+		<member type="way" ref="817629405" role=""/>
+		<member type="way" ref="229624942" role=""/>
+		<member type="way" ref="858326333" role=""/>
+		<member type="way" ref="466777697" role=""/>
+		<member type="way" ref="466777721" role=""/>
+		<member type="way" ref="860645735" role=""/>
+		<tag k="from" v="İbni Sina İlkokulu"/>
+		<tag k="name" v="94 İbni Sina İlkokulu - Zeytinburnu"/>
+		<tag k="network" v="İETT"/>
+		<tag k="network:wikidata" v="Q343136"/>
+		<tag k="operator" v="İETT"/>
+		<tag k="ref" v="94"/>
+		<tag k="route" v="bus"/>
+		<tag k="to" v="Zeytinburnu"/>
+		<tag k="type" v="route"/>
+	</relation>
+	<relation id="14979258" version="1">
+		<member type="way" ref="1089896050" role="outer"/>
+		<member type="way" ref="722495829" role="inner"/>
+		<tag k="landuse" v="grass"/>
+		<tag k="type" v="multipolygon"/>
+	</relation>
+	<relation id="14990624" version="1">
+		<member type="way" ref="1120843822" role="inner"/>
+		<member type="way" ref="1120843823" role="outer"/>
+		<tag k="building" v="yes"/>
+		<tag k="type" v="multipolygon"/>
+	</relation>
+	<relation id="14996468" version="1">
+		<member type="way" ref="91264101" role="from"/>
+		<member type="node" ref="1059525660" role="via"/>
+		<member type="way" ref="1121082739" role="to"/>
+		<tag k="restriction" v="no_left_turn"/>
+		<tag k="type" v="restriction"/>
+	</relation>
+</osm>
