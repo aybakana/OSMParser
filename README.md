@@ -17,3 +17,21 @@ To see OSMParser in action check out my [related project](https://github.com/Lau
 
 ## Example
 * main.cc has example way of extracting number of nodes, ways, relations from an OSM file
+
+## To Compile and Run
+
+# On Linux
+
+* mkdir build
+* cd build
+* cmake ..
+* make -j4
+* ./main ../sampledata/sample.osm
+
+# On Windows
+
+* mkdir build
+* cd build
+* cmake ..
+* cmake --build . -j4
+* main.exe ../sampledata/sample.osm
