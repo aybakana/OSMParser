@@ -1,10 +1,16 @@
 #pragma once
-#include <vector>
-#include <memory>
 
-#include "util.hpp"
-#include "osmtag.hpp"
-#include "osmimember.hpp"
+#include "util.h"
+#include "tag.h"
+#include "member.h"
+#include "object.h"
+#include "node.h"
+#include "way.h"
+
+#include <vector>
+//#include <memory> // no need for this
+
+namespace xml = tinyxml2;
 
 namespace osmp
 {
@@ -31,7 +37,7 @@ namespace osmp
 		IRelation(const IRelation&& other) = delete;
 		virtual ~IRelation() {}
 
-		friend Relation CreateRelation(const tinyxml2::XMLElement* xml, Object* parent);
+		friend Relation CreateRelation(const xml::XMLElement* xml, Object* parent);
 
 		[[nodiscard]] std::string GetRelationType() const;
 
@@ -46,7 +52,7 @@ namespace osmp
 		[[nodiscard]] bool HasNullMembers() const { return hasNullMembers; }
 
 	protected:
-		IRelation(const tinyxml2::XMLElement* xml, Object* parent);
+		IRelation(const xml::XMLElement* xml, Object* parent);
 
 	private:
 		std::string relationType;

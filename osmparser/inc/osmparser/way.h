@@ -1,10 +1,13 @@
 #pragma once
-#include <vector>
-#include <memory>
 
-#include "util.hpp"
-#include "osmtag.hpp"
-#include "osmimember.hpp"
+#include "util.h"
+#include "tag.h"
+#include "member.h"
+#include "object.h"
+
+#include <vector>
+
+namespace xml = tinyxml2;
 
 namespace osmp
 {
@@ -17,14 +20,14 @@ namespace osmp
 		IWay(const IWay&& other) = delete;
 		virtual ~IWay() {}
 
-		friend Way CreateWay(const tinyxml2::XMLElement* way_elem, Object* parent);
+		friend Way CreateWay(const xml::XMLElement* way_elem, Object* parent);
 
 		const Nodes& GetNodes() const;
 		size_t GetNodesSize() const;
 		Node GetNode(size_t index) const;
 
 	protected:
-		IWay(const tinyxml2::XMLElement* way_elem, Object* parent);
+		IWay(const xml::XMLElement* way_elem, Object* parent);
 
 	public:
 		bool area, closed;	// Closed := Startpoint = endpoint, Area := Closed AND certain conditions are not met

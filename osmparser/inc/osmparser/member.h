@@ -1,11 +1,11 @@
 #pragma once
 
+#include "util.h"
+#include "tag.h"
+
 #include <string>
 #include <vector>
 #include <map>
-
-#include "util.hpp"
-#include "osmtag.hpp"
 
 namespace osmp
 {
@@ -18,7 +18,6 @@ namespace osmp
 			NODE, WAY, RELATION
 		};
 
-	public:
 		IMember(const IMember& other) = delete;
 		virtual ~IMember() {}
 
@@ -32,7 +31,6 @@ namespace osmp
 	protected:
 		IMember(const tinyxml2::XMLElement* element, Object* parent, IMember::Type type);
 
-	protected:
 		IMember::Type type;
 		Object* parent;
 
@@ -48,3 +46,7 @@ namespace osmp
 		std::string timestamp;
 	};
 }
+
+
+
+

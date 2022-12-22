@@ -1,14 +1,10 @@
-#include "osmrelation.hpp"
-
-#include <memory>
+#include "osmparser/relation.h"
 
 #include <tinyxml2.h>
 
-#include "osmobject.hpp"
-#include "osmnode.hpp"
-#include "osmway.hpp"
+#include <memory>
 
-namespace xml = tinyxml2;
+//namespace xml = tinyxml2; // already in header file
 
 namespace osmp
 {
@@ -40,13 +36,13 @@ namespace osmp
 
 	namespace {
 		struct ConcreteRelation : public IRelation {
-			ConcreteRelation(const tinyxml2::XMLElement* way_elem, Object* parent) :
+			ConcreteRelation(const xml::XMLElement* way_elem, Object* parent) :
 				IRelation(way_elem, parent)
 			{}
 		};
 	}
 
-	Relation CreateRelation(const tinyxml2::XMLElement* xml, Object* parent)
+	Relation CreateRelation(const xml::XMLElement* xml, Object* parent)
 	{
 		return std::make_shared<ConcreteRelation>(xml, parent);
 	}

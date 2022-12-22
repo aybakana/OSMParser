@@ -1,9 +1,14 @@
 #pragma once
+
+#include "util.h"
+#include "member.h"
+#include "tag.h"
+
+#include <tinyxml2.h>
+
 #include <vector>
 
-#include "util.hpp"
-#include "osmimember.hpp"
-#include "osmtag.hpp"
+namespace xml = tinyxml2;
 
 namespace osmp
 {
@@ -16,15 +21,16 @@ namespace osmp
 		INode(const INode&& other) = delete;
 		virtual ~INode() {}
 
-		friend Node CreateNode(const tinyxml2::XMLElement* element, Object* parent);
+		friend Node CreateNode(const xml::XMLElement* element, Object* parent);	
 
 		double GetLat() const { return lat; }
 		double GetLon() const { return lon; }
 
 	protected:
-		INode(const tinyxml2::XMLElement* xml, Object* parent);
+		INode(const xml::XMLElement* xml, Object* parent);
 
 	public:
 		double lat, lon;
 	};
 }
+

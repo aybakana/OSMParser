@@ -1,18 +1,21 @@
 #pragma once
+
+#include "util.h"
+#include "node.h"
+#include "way.h"
+#include "relation.h"
+
 #include <string>
-#include <memory>
 #include <map>
 #include <vector>
-
-#include "util.hpp"
 
 namespace osmp
 {
 	class Object
 	{
-	public:
-		explicit Object(const std::string& file);
-		~Object();
+    public:
+        explicit Object(const std::string& file);
+        ~Object();
 
 		Nodes GetNodes() const;
 		size_t GetNodesSize() const;
@@ -26,11 +29,12 @@ namespace osmp
 		size_t GetRelationsSize() const;
 		Relation GetRelation(uint64_t id) const;
 
-	public:
 		const std::string version;
 		const std::string generator;
 
 		Bounds bounds;
+
+
 		
 	private:
 		std::map<uint64_t, Node> nodes;
@@ -38,3 +42,5 @@ namespace osmp
 		std::map<uint64_t, Relation> relations;
 	};
 }
+
+

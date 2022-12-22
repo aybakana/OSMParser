@@ -1,17 +1,16 @@
-#include "osmway.hpp"
+
+
+#include "osmparser/way.h"
 
 #include <string>
 
 #include <tinyxml2.h>
 
-#include "osmobject.hpp"
-#include "osmtag.hpp"
-
 namespace xml = tinyxml2;
 
 namespace osmp
 {
-	IWay::IWay(const tinyxml2::XMLElement* way_elem, Object* parent) :
+	IWay::IWay(const xml::XMLElement* way_elem, Object* parent) :
 		IMember(way_elem, parent, IMember::Type::WAY)
 	{
 		area = GetSafeAttributeBool(way_elem, "area");
@@ -38,13 +37,13 @@ namespace osmp
 
 	namespace {
 		struct ConcreteWay : public IWay {
-			ConcreteWay(const tinyxml2::XMLElement* way_elem, Object* parent) :
+			ConcreteWay(const xml::XMLElement* way_elem, Object* parent) :
 				IWay(way_elem, parent)
 			{}
 		};
 	}
 
-	Way CreateWay(const tinyxml2::XMLElement* way_elem, Object* parent)
+	Way CreateWay(const xml::XMLElement* way_elem, Object* parent)
 	{
 		return std::make_shared<ConcreteWay>(way_elem, parent);
 	}

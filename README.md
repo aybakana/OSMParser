@@ -14,3 +14,6 @@ It uses tinyxml2 to read map data from a file and creates a C++ object to store 
 * query map data
 
 To see OSMParser in action check out my [related project](https://github.com/Lauchmelder23/MapViewer)
+
+## Example
+* main.cc has example way of extracting number of nodes, ways, relations from an OSM file

@@ -1,6 +1,6 @@
-#include "osmimember.hpp"
+#include "osmparser/member.h"
+//#include "osmparser/object.hpp"
 
-#include "osmobject.hpp"
 #include <tinyxml2.h>
 
 namespace xml = tinyxml2;
@@ -36,7 +36,7 @@ namespace osmp
 		return type;
 	}
 
-	const std::vector<Tag>& IMember::GetTags() const
+	const TagList& IMember::GetTags() const
 	{
 		return tags;
 	}

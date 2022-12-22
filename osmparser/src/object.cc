@@ -1,39 +1,54 @@
-#include "osmobject.hpp"
 
-#include <iostream>
-#include <vector>
+#include "osmparser/object.h"
 
 #include <tinyxml2.h>
 
-#include "osmnode.hpp"
-#include "osmway.hpp"
-#include "osmrelation.hpp"
+#include <iostream>
+#include <vector>
 
 namespace xml = tinyxml2;
 
 namespace osmp
 {
+	class INode;
+	// Forward declarations are necessary here!
+	extern Node CreateNode(const xml::XMLElement* element, Object* parent);
+	extern Way CreateWay(const xml::XMLElement* way_elem, Object* parent);
+	extern Relation CreateRelation(const xml::XMLElement* xml, Object* parent);
+
+    #define FAILED(err) (err != xml::XML_SUCCESS)
+
 	Object::Object(const std::string& file) :
 		bounds({ 0.0f, 0.0f, 0.0f, 0.0f })
 	{
 		xml::XMLDocument doc;
 		xml::XMLError result = doc.LoadFile(file.c_str());
-		if (result != xml::XML_SUCCESS)
+        if ( FAILED ( result ) ) 
 		{
-			std::cerr << "Error: " << result << std::endl;
-			return;
+			std::cerr << "ERROR: " << doc.ErrorIDToName(result) << std::endl;
+			exit(0);
 		}
 	
 		xml::XMLElement* root = doc.FirstChildElement();
 
 		// Get bounds
+		// check if the file has bounds element
 		xml::XMLElement* bounds_elem = root->FirstChildElement("bounds");
-		bounds = {
-			GetSafeAttributeFloat(bounds_elem, "minlat"),
-			GetSafeAttributeFloat(bounds_elem, "minlon"),
-			GetSafeAttributeFloat(bounds_elem, "maxlat"),
-			GetSafeAttributeFloat(bounds_elem, "maxlon")
-		};
+		if ( bounds_elem != nullptr )
+		{
+			bounds = {
+				GetSafeAttributeFloat(bounds_elem, "minlat"),
+				GetSafeAttributeFloat(bounds_elem, "minlon"),
+				GetSafeAttributeFloat(bounds_elem, "maxlat"),
+				GetSafeAttributeFloat(bounds_elem, "maxlon")
+			};
+		}
+		else 
+		{
+			std::cerr <<"ERROR: OSM Data must contain bounds element!!!" << std::endl;
+			exit(0);
+		}
+
 
 		// Get nodes
 		xml::XMLElement* node_elem = root->FirstChildElement("node");
@@ -122,7 +137,7 @@ namespace osmp
 		Relations vecRelations;
 		for (std::map<uint64_t, Relation>::const_iterator it = relations.begin(); it != relations.end(); it++)
 			vecRelations.push_back(it->second);
-
+		std::cout << "Relations Object::GetRelations() const" << std::endl;
 		return vecRelations;
 	}
 
@@ -139,4 +154,11 @@ namespace osmp
 
 		return nullptr;
 	}
+
+
+
+
 }
+
+
+
